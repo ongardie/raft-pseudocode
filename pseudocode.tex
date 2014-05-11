@@ -1,0 +1,57 @@
+\documentclass[10pt,letterpaper,twocolumn]{article}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{xcolor}
+
+\setlength{\textheight}{9.1in}
+\setlength{\columnsep}{0.25in}
+\setlength{\textwidth}{6.6in}
+\setlength{\topmargin}{0.0in}
+\setlength{\headheight}{0.0in}
+\setlength{\headsep}{0.0in}
+
+\newcommand\codetitlec[1]{%
+  \colorbox{black}{%
+    \makebox[.975\textwidth][l]{%
+      \color{white}%
+      \textbf{\footnotesize{ #1}}}%
+  }}%
+
+\newcommand\codetitle[1]{\codetitlec{#1}\vspace{1ex}}%
+
+\lstdefinestyle{custompy}{
+  language=Python,
+  basicstyle=\scriptsize\ttfamily,
+  belowcaptionskip=1\baselineskip,
+  breaklines=false,
+  commentstyle=\itshape\color{purple!40!black},
+  escapeinside={\#*}{*\#}, 
+  frame=single,
+  identifierstyle=\color{blue},
+  keywordstyle=\bfseries\color{green!40!black},
+  % deletekeywords={apply}, % wtf, doesn't work
+  morekeywords={*,on,reply,send,to,choose,foreach},
+  %numbers=left,
+  showstringspaces=false,
+  stringstyle=\color{orange},
+  xleftmargin=\parindent,
+}
+
+\begin{document}
+
+\begin{figure*}
+\vspace{-1cm}
+\begin{minipage}[t]{.47\textwidth}
+\lstinputlisting[style=custompy]{events.py}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.47\textwidth}
+\lstinputlisting[style=custompy]{rules.py}
+\lstinputlisting[style=custompy]{state.py}
+\end{minipage}
+\caption{
+alternative cheatsheet
+}
+\end{figure*}
+
+\end{document}
